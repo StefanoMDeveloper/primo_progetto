@@ -1,10 +1,10 @@
 from django.urls import path
-from .views import homepage, esif, esifelse, esifelif
+from .views import esif, ifelse, ifelif, esfor
 
+app_name = "seconda_app"
 urlpatterns = [
-    path('welcome/', homepage, name='home'),
-    path('es_if/', esif, name='esif'),
-    path('ifelse/', esifelse, name='ifelse'),
-    path('ifelif/', esifelif, name='ifelif'),
-
+    path("if/", esif, name="if"),
+    path("ifelse/", ifelse, name="ifelse"),
+    path("ifelif/", ifelif, name="ifelif"),
+    path("for/", esfor, name="for"),
 ]

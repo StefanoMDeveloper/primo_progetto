@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %} {{block.super}} | Esercizio if-elif {% endblock title %}
+{% block content %}
+    <h1>Risultato</h1>
+    <p>var1 = {{var1}}, var2 = {{var2}}</p>
+
+    {% if var1 == var2 %}<p>var1 e var2 sono uguali</p>
+    {% elif var1 > var2%}<p>var1 è maggiore di var2</p>
+    {% else %} <p>var1 è minore di var2</p>
+    {% endif %}
+{% endblock content %}

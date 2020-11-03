@@ -1,38 +1,23 @@
-from django.http import HttpResponse
 from django.shortcuts import render
-import datetime
 
 # Create your views here.
-#L1
-def homepage(request):
-    return HttpResponse("<h1>Ciao a tutti! Benvenuti nella homepage!</h1> ")
 
-#L2
+
 def esif(request):
-    #https://www.decodejava.com/django-template-if-tag.htm
-    #Creating a dictionary of key-value pairs
-    dic = { 'var1' : 200,
-    'var2' : 200,
-    'var3' : 300 }
-    #Calling the render() method to render the request from es_if.html page by using the dictionary, dic
-    return render(request, "es_if.html", dic)
+    context = {"var1": 5, "var2": 10}
+    return render(request, "if.html", context)
 
-#L3
-def esifelse(request):
-    #https://www.decodejava.com/django-template-if-else-tag.htm
-    dic = { 'var1' : 'admin',
-    'var2' : 'admin',
-    'var3' : 600 }
-    return render(request, "es_ifelse.html", dic)
 
-#L4
-def esifelif(request):
-    dic = { 'var1' : 100,
-    'var2' : 100.0,
-    'var3' : 100.50,
-    'str1' : 'Hello',
-    'str2' : 'hello',
-    'str3' : "Hello",
-    'list1': [1, datetime.date(2019,7,16), 'Make your life productive!'],
-    'list2': [2, datetime.date(2019,7,16), 'Do not give up!']}
-    return render(request, "es_ifelif.html", dic)
+def ifelse(request):
+    context = {"var1": 10, "var2": 5}
+    return render(request, "ifelse.html", context)
+
+
+def ifelif(request):
+    context = {"var1": 10, "var2": 5}
+    return render(request, "ifelif.html", context)
+
+
+def esfor(request):
+    context = {"var1": 10}
+    return render(request, "for.html", context)
