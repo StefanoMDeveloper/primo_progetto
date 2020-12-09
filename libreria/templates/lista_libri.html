@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Lista libri
+{% endblock title %}
+
+{% block content %}
+    <h4>Libri:</h4>
+        {% for libro in libri %}
+            <p><strong>Titolo: </strong>{{ libro.titolo }}</p>
+            <p><strong>Autore: </strong>{{ libro.autore.nome }} , {{ libro.autore.cognome }}</p>
+            <p><strong>Genere: </strong>{{ libro.genere.all|join:", " }}</p>
+            <p><strong>ISBN: </strong>{{ libro.ISBN }}</p>
+            
+            
+            <hr>
+        {% endfor %}
+    
+{% endblock content %}
