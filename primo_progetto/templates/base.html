@@ -33,17 +33,17 @@
             <a class="nav-link" href="/"> <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                   aria-haspopup="true" aria-expanded="false">
-                    Prima
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="{% url 'prima_app:index' %}">Index</a>
-                    <a class="dropdown-item" href="{% url 'prima_app:homepage' %}">Home</a>
-                    <a class="dropdown-item" href="{% url 'prima_app:chi-siamo' %}">Chi siamo</a>
-                    <a class="dropdown-item" href="{% url 'prima_app:variabili' %}">Variabili</a>
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Prima
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="{% url 'prima_app:index' %}">Index</a>
+                <a class="dropdown-item" href="{% url 'prima_app:homepage' %}">Home</a>
+                <a class="dropdown-item" href="{% url 'prima_app:chi-siamo' %}">Chi siamo</a>
+                <a class="dropdown-item" href="{% url 'prima_app:variabili' %}">Variabili</a>
 
-                </div>
+            </div>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -75,6 +75,14 @@
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="{% url 'libreria:lista_libri' %}">Libri</a>
 
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Contatti
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="{% url 'forms_app:contatti' %}">Contattaci</a>
             </div>
           </li>
         </ul>
