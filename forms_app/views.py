@@ -1,5 +1,5 @@
-from django.shortcuts import render
-from .forms import FormContatto
+from django.shortcuts import render, HttpResponseRedirect
+from .forms import FormContatto, FormRegistrazione
 from django.http import HttpResponse
 
 # Create your views here.
@@ -33,3 +33,20 @@ def contatti(request):
     #arriviamo a questo punto se si tratta della prima volta che la pagina viene richiesta (con metodo GET), o se il form non è valido e ha errori
     context = {"form": form}
     return render(request, "contatto.html", context)
+
+def registrazioneView(request):
+    if request.method == "POST":
+        form = FormRegistrazione(request.POST)
+        if form.is_valid():
+            username = form.cleaned_data["username"]
+            email = form.cleaned_data["email"]
+            password = form.cleaned_data["password1"]
+            User.objects.create.user(username=username, password=password, email=email)
+            user = authenticate(username=username, password=password) #si controllano le credenziali
+            login(request, user) #si effettua il login per l'utente autenticato
+            return HttpResponseRedirect("/")
+    else: #se la richiesta è di tipo GET viene mostrato il form vuoto (unbounded)
+        form = FormRegistrazione()
+    context = {"form": form}
+    return render(request, 'registrazione.html', context)
+
